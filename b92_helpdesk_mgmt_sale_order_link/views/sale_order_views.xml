@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_order_form_extend" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object"
+                    name="action_open_helpdesk_ticket_line" icon="fa-life-ring" attrs="{'invisible': [('ticket_line_count', '=', 0)]}">
+                    <div class="o_stat_info">
+                        <field name="ticket_line_count" class="o_stat_value"/>
+                        <span class="o_stat_text"> Tickets (Lineas) </span>
+                    </div>
+                </button>
+
+                <button class="oe_stat_button" type="object"
+                name="action_open_helpdesk_ticket_order" icon="fa-life-ring" attrs="{'invisible': [('ticket_order_count', '=', 0)]}"
+                groups="base.group_no_one">
+                <div class="o_stat_info">
+                    <field name="ticket_order_count" class="o_stat_value"/>
+                    <span class="o_stat_text"> Tickets (Pedido) </span>
+                </div>
+                </button>
+
+                <button class="oe_stat_button" type="object"
+                name="action_open_helpdesk_ticket_so" icon="fa-life-ring" attrs="{'invisible': [('ticket_so_count', '=', 0)]}">
+                <div class="o_stat_info">
+                    <field name="ticket_so_count" class="o_stat_value"/>
+                    <span class="o_stat_text"> Tickets SO </span>
+                </div>
+                </button>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>
