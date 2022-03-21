@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="helpdesk_ticket_view_form" model="ir.ui.view">
+        <field name="name">b92.account.analytic.line.tree.hr_timesheet.inherit.invoice</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="task_id" position="after">
+                <field name="timesheet_invoice_id"/>
+                <field name="timesheet_invoice_type"/>
+            </field>
+        </field>
+    </record>
+</odoo>

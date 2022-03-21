@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="timesheet_helpdesk_ticket_view_form" model="ir.ui.view">
+        <field name="name">b92.helpdesk.ticket.form.inherit.timesheet_invoice_type</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk_mgmt_timesheet.timesheet_helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='timesheet_ids']/tree[1]/field[@name='unit_amount']" position="after">
+                <field name="timesheet_invoice_type"/>
+                <field name="non_allow_billable"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
